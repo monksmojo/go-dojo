@@ -1,0 +1,27 @@
+go 1.21.0
+
+use (
+	./01main
+    ./02variables
+    ./03package
+    ./04input
+	./05time
+    ./06pointers
+    ./07array
+    ./08slices
+    ./09misc
+    ./10operators
+    ./11typecasting
+    ./12maps
+    ./13strings
+    ./14ifelse
+    ./15switch
+    ./16forloop
+    ./17functions
+    ./18closure
+    ./19structs
+    ./20interface
+    ./21typeassertion
+    ./22errors
+    ./23advancefunctions
+)
