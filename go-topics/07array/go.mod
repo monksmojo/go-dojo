@@ -1,3 +1,3 @@
 module 07array
 
-go 1.20
+go 1.22.0

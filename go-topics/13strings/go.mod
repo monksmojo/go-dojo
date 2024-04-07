@@ -1,3 +1,3 @@
 module 13strings
 
-go 1.20
+go 1.22.0

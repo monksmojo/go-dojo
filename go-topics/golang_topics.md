@@ -1,12 +1,26 @@
 ### GO PROGRAMMING LANGUAGE
 
-> THE NEXT GEN LANGUAGE
+> Following are the references, books and videos which are helping me along my go journey to become a gopher and help me build this go-topics repository.
+
+> BIG THANKS TO EACH CREATORS AND DEVELOPERS OF FOR CREATING THESE AWESOME REFERENCES/COURSES/TUTORIALS.
+
+- [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests "Learn Go with tests")
+
+- [Go by Example](https://gobyexample.com/hello-world "Go by Example")
+
+- [learn-golang by boot.dev](https://www.boot.dev/learn/learn-golang "learn-golang by boot.dev")
+
+- [Concurrency in Go by Jake Wright "youtube video tutorial"](https://youtu.be/LvgVSSpwND8?list=PL9KOhO7TtG6YazaOAKlU_elPlRDQ2ht3n)
+
+
+
+#### THE NEXT GEN LANGUAGE
 
 - **The GO PROGRAMMING LANGUAGE**
 - **(GOLANG)**
-- _It originated at Google by ken Ken Thompson, Rob Pike, and others_
+- It originated at Google by ken Ken Thompson, Rob Pike, and others
 
-  > features of Go Language
+#### Features Of Go Language
 
 - It is Free and open source
 - It Supports Statically typed
@@ -22,33 +36,104 @@
 - Golang is partial OOPS {contains structs, does not support classes,overloading}
 - lexer does lot of work so no semi colon ; in code
 - GO is case sensitive
+- With introduction to go 1.22.0 we can range over an integer in for loop (note: range on integer start with 0 till n-1)
 
-> misses in GO
+#### Misses In GO
 
 - try catch is missing
 - inheritance is missing
-- switch case is missing
 
-### _Go vs Java_
+#### Go vs Java
 
 - GoLang is Complied
 - Java on the other hand is somewhere in between compiled and interpreted as it creates binary which is executed by jvm (java virtual machine)
 
-### to run go file we write
+#### To Run Go File We write
 
 - go run <file_name>.go
 
-### go has a built in documentation
+#### Go Has A Built In Documentation
 
 - use command go help to see various tools available in go
 - and to read about a particular go module we can write
 - `go help <command_name>`
 
-### to see Go install path
+#### To See Go Install Path
 
 - go env GOPATH
 
-### working with multi module workspace
+### Introduction to `go.mod` file
+
+#### Explaining why go module were needed
+
+- go after the release of go 1.16 release go module
+- go module help us to execute go program outside the `GoPath`
+- The GOPATH environment variable in Go defines the root of your workspace. It is used by Go tools to organize your code and dependencies.
+
+- It's important to note that while GOPATH is crucial for organizing your workspace and managing dependencies, it is not being removed. Instead, the Go ecosystem is transitioning from GOPATH development mode to Go modules, which offer a more robust and reproducible way to manage dependencies.
+
+- modules are the way of storing internal and external libraries (3rd party)
+
+- A module is defined by a go.mod file, which specifies the module's path, version, and its dependencies.
+
+- the standard way of creating a go module is
+
+```
+go mod init github.com/<userName>/<projectName>
+```
+
+- Go modules are decentralized by nature. Unlike some other package management systems, there is no central repository for Go modules. Instead, modules can be hosted on any version control system, such as Git repositories hosted on services like GitHub, GitLab, or even on a local file system.
+
+### packages vs modules in go
+
+- modules are the way of storing internal and external libraries (3rd party)
+
+- packages in go are the directories that contain multiple go files having similar function,variable and constants
+
+- the primary and mandatory package in go is `package main`
+  which contains `func main(){}` function
+- `func main(){}` function act as the entry point to the go compiler for the execution of the program
+
+  ```go
+  package main
+    import (
+    "fmt"
+    )
+    func main() {
+    fmt.Println("welcome to main driver class")
+    }
+
+  ```
+
+- it is go practice to make a treat a single package as a single directory.
+- custom package and directory name should be same
+- for ex
+
+```code
+$ tree /03package
+/03package
+├── customPackage
+│   |-- customMath.go // is declared in package customPackage
+│   |-- customString.go // is declared in package customPackage
+|
+|--go.mod // which is the module file of /03package(also the module name) directory
+|--main.go // which comes under package main
+|
+```
+
+- to import the functions and variables from package customPackage into package main
+- we have to import in the following manner
+
+  - "module_name/package_name"
+  - for example "03package/customPackage"
+
+- only the public methods and variables can be shared between the packages
+- in go we declare public methods and variables with _TitleCasing_ ex func GetValue(){}
+- function and variables declared in multiple go file but inside same package can be shared without import
+
+### Introduction to `go.work` file
+
+#### Working With Multi Module Workspace
 
 - when working with projects with multiple modules go.mod files
 - gopl needs a central file to manage all your sub module
@@ -80,6 +165,17 @@ go work use project-two
 ```
 
 - This will add a go.work file in your parent directory that contains a list of directories you marked for usage:
+
+### how to write unit test in go (approach-1)
+- It is good to put the code/logic to test in separate functions. 
+- I have learned following steps while writing a test in go.
+  - creating a `name_test.go` file where we write our unit test.
+  - the unit test function start with `TestNameOfFunction(t *testing.T)` taking 
+  `t *testing.T` as the only argument.
+  - we are using `import "testing"` package. 
+
+- It may change as we advance
+ 
 
 ### what is lexer
 
@@ -131,7 +227,7 @@ go work use project-two
 - Struts
 - Pointers
 
-### Whn we say almost everything is type
+### Why we say almost everything is type
 
 - Functions and Channels are also Types
 
@@ -165,7 +261,7 @@ go work use project-two
    - you will get a memory address which you can access using pointer
    - zero storage - no value will be initialized
 2. make()
-   - allocate memory to the variable and initialize the variable with value
+   - allocate memory to the variable and initialize the variable with default value
    - you will get a memory address which you can access using pointers
    - zero storage - no value will be initialized
 
@@ -201,50 +297,3 @@ pointers are the variables which store memory location of the other variables
 - fmt.Printf()
 
 - all these packages are inside fmt package
-
-### packages and modules in go
-
-- modules are the way of storing internal and external libraries (3rd party)
-- packages in go are the directories that contain multiple go files having similar function,variable and constants
-- the primary and mandatory package in go is
-
-  - package main
-  - which contains func main(){} function
-  - func main(){} act as the entry point to the go compiler for the execution of the program
-
-  ```go
-  package main
-    import (
-    "fmt"
-    )
-    func main() {
-    fmt.Println("welcome to main driver class")
-    }
-
-  ```
-
-- it is go practice to make a treat a single package as a single directory.
-- custom package and directory name should be same
-- for ex
-
-```code
-$ tree /03package
-/03package
-├── customPackage
-│   |-- customMath.go // is declared in package customPackage
-│   |-- customString.go // is declared in package customPackage
-|
-|--go.mod // which is the module file of /03package(also the module name) directory
-|--main.go // which comes under package main
-|
-```
-
-- to import the functions and variables from package customPackage into package main
-- we have to import in the following manner
-
-  - "module_name/package_name"
-  - for example "03package/customPackage"
-
-- **only the public methods and variables can be shared between the packages**
-- in go we declare public methods and variables with *TitleCasing* ex func GetValue(){}
-- **function and variables declared in multiple go file but inside same package can be shared without import**

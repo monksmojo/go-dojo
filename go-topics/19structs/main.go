@@ -32,48 +32,48 @@ func main() {
 
 	// how to create a instance of the struct
 	// method-1 --> dictionary method
-	var m1 MessageToSend = MessageToSend{
-		PhoneNumber: 8877449955,
-		Message:     "Hey I am a struct m1",
+	var m1 messageToSend = messageToSend{
+		phoneNumber: 8877449955,
+		message:     "Hey I am a struct m1",
 	}
 	fmt.Println(m1)
 
 	//method-2 --> constructor method
-	var m2 MessageToSend = MessageToSend{8844551122, "Hey I am a struct m2"}
+	var m2 messageToSend = messageToSend{8844551122, "Hey I am a struct m2"}
 	fmt.Println(m2)
 
 	// method-3 --> declare and initialize with . operator
-	var m3 MessageToSend
+	var m3 messageToSend
 	/** when we declare struct
 		all its primitive data type
 		properties are declared
 		and initialized with default values
 	**/
-	m3.PhoneNumber = 4455221166
-	m3.Message = "Hey I am a struct m3"
+	m3.phoneNumber = 4455221166
+	m3.message = "Hey I am a struct m3"
 	fmt.Println(m3)
 
 	// method 4 --> declare with {} brackets
 	// and initialize with . operator
-	m4 := MessageToSend{}
-	m4.PhoneNumber = 5544774499
-	m4.Message = "Hey I am a struct m4"
+	m4 := messageToSend{}
+	m4.phoneNumber = 5544774499
+	m4.message = "Hey I am a struct m4"
 	fmt.Println(m4)
 
 	// method 5 --> declaring and initializing nested struct
-	receipt1 := Receipt{}
-	receipt1.ReceiptNumber = 121
-	receipt1.Cost = 4500.54
-	receipt1.ShopInfo.ShopName = "Get It On"
+	receipt1 := receipt{}
+	receipt1.receiptNumber = 121
+	receipt1.cost = 4500.54
+	receipt1.shopInfo.shopName = "Get It On"
 
 	// declaring and initializing person struct
-	person1 := Person{Name: "John", Age: 23}
+	person1 := person{name: "John", age: 23}
 	fmt.Println("a struct of type person", person1)
 
 	// declaring a initializing person struct using . operator
-	person2 := Person{}
-	person2.Name = "Paul"
-	person2.Age = 24
+	person2 := person{}
+	person2.name = "Paul"
+	person2.age = 24
 	fmt.Println("a struct of type person", person2)
 
 	// anonymous structs
@@ -120,21 +120,21 @@ func main() {
 	you can access the fields directly
 	**/
 	pwcProject := Project{
-		ProjectName:       "PWC_WEB",
-		ProjectDepartment: "Web Development",
+		projectName:       "PWC_WEB",
+		projectDepartment: "Web Development",
 	}
 
-	employee := Employee{
-		EmpId: 2341,
-		Person: Person{
-			Name: "Sid Sha",
-			Age:  21,
+	employee := employee{
+		empId: 2341,
+		person: person{
+			name: "Sid Sha",
+			age:  21,
 		},
-		Project1: Project{
-			ProjectName:       "InZone",
-			ProjectDepartment: "Mobile Apps",
+		project1: Project{
+			projectName:       "InZone",
+			projectDepartment: "Mobile Apps",
 		},
-		Project2: pwcProject,
+		project2: pwcProject,
 	}
 
 	fmt.Println(employee)
@@ -170,47 +170,65 @@ func main() {
 		},
 	}
 	fmt.Printf("the radius of %v is %f \n", s2.shapeName, s2.radius)
-	fmt.Printf("the area of %v is %f /n", s2.shapeName, s2.area(s2.radius))
+	fmt.Printf("the area of %v is %f \n", s2.shapeName, s2.area(s2.radius))
+
+	// using pointers with the struct
+	// to create struct properties getter and setter
+	var angela person
+	angela.SetName("Angela")
+	angela.SetAge(27)
+	fmt.Println(angela)
 
 }
 
-type MessageToSend struct {
-	PhoneNumber int
-	Message     string
+type messageToSend struct {
+	phoneNumber int
+	message     string
 }
 
 /*
 *
 nested struct we can declare a struct inside another struct
-Receipt is a struct which has Shop as a nested struct
+receipt is a struct which has Shop as a nested struct
 *
 */
-type Receipt struct {
-	ReceiptNumber int
-	Cost          float64
-	ShopInfo      Shop
+type receipt struct {
+	receiptNumber int
+	cost          float64
+	shopInfo      shop
 }
 
-type Shop struct {
-	ShopName string
+type shop struct {
+	shopName string
 }
 
-type Person struct {
-	Name string
-	Age  int
+type person struct {
+	name string
+	age  int
 }
 
-type Employee struct {
-	Person
-	EmpId    int
-	Project1 Project
-	Project2 Project
+// using pointers with the struct
+// to create struct properties getter and setter
+
+func (p *person) SetName(name string) {
+	p.name = name
+}
+
+func (p *person) SetAge(age int) {
+	p.age = age
+}
+
+type employee struct {
+	person
+	empId    int
+	project1 Project
+	project2 Project
 }
 
 // project struct act as a nested struct to the  Employee Struct
 type Project struct {
-	ProjectName       string
-	ProjectDepartment string
+	projectName       string
+	projectDepartment string
 }
 
 type Processor struct {
@@ -248,7 +266,7 @@ func (s square) GetArea() (area float64) {
 }
 
 func (s square) GetPerimeter() float64 {
-	return 4 * s.length
+	return float64(s.numberOfSides) * s.length
 }
 
 func (s square) GetShapeName() string {

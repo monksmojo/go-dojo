@@ -1,4 +1,4 @@
-go 1.21.0
+go 1.22.0
 
 use (
 	./01main
@@ -10,7 +10,7 @@ use (
     ./07array
     ./08slices
     ./09misc
-    ./10operators
+    ./10operators   
     ./11typecasting
     ./12maps
     ./13strings
@@ -24,4 +24,5 @@ use (
     ./21typeassertion
     ./22errors
     ./23advancefunctions
+    ./24concurrency
 )

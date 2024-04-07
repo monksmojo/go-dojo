@@ -42,6 +42,7 @@ func main() {
 		fmt.Println("PN:13 Write a Go function to remove duplicate characters of a given string.")
 		fmt.Println("PN:14 Write a Go function to print the reverse of the string and check for palindrome")
 		fmt.Println("PN:15 Write a Go function to get a single string from two given strings, separated by a space and swap the first two characters of each string. Eg input: 'abc', 'xyz' output: 'xyc abz'")
+		fmt.Println("PN:16 LeetCode 744. Find Smallest Letter Greater Than Target")
 		fmt.Println("Select the practical you want to execute")
 		var pn int
 		fmt.Scanln(&pn)
@@ -91,6 +92,8 @@ func main() {
 		case 15:
 			fmt.Println("PN:15 Write a Go function to get a single string from two given strings, separated by a space and swap the first two characters of each string. Eg input: 'abc', 'xyz' output: 'xyc abz'")
 			pn15.CreateString()
+		case 16:
+			fmt.Println("PN:16 LeetCode 744. Find Smallest Letter Greater Than Target")
 		default:
 			fmt.Println("you entered the wrong choice dummy !")
 		}

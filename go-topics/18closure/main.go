@@ -41,6 +41,20 @@ func main() {
 
 	// evenNumber() closure is independent of oddNumber() closure
 
+	/*
+		A Closure Example from the free code camp
+		A closure is a function that reference variables from outside its own function body
+		the function may access and assigned to the reference variable.
+	*/
+	nameAggregator := concatenation()
+	// nameAggregator() var nameAggregator func(string) string
+	nameAggregator("Hi")
+	nameAggregator("my")
+	nameAggregator("name")
+	nameAggregator("is")
+	var concatenatedString string = nameAggregator("Paul")
+	fmt.Println(concatenatedString)
+
 }
 
 func greet(name string) func() string {
@@ -58,4 +72,12 @@ func getNumber(number int) func() int {
 		return number
 	}
 }
- 
+
+func concatenation() func(string) string {
+	var doc string
+	aggregator := func(word string) string {
+		doc += word + " "
+		return doc
+	}
+	return aggregator
+}
