@@ -182,8 +182,7 @@ func calculateAverage(sumOfSlice func(slice ...uint) uint, slice ...uint) float6
 // function double the values which has named return
 // and a naked return
 func incorrectDoubleTheValue(a, b int) (x int, y int) {
-	a *= 2
-	b *= 2
+	fmt.Printf("value of a is %v and b is %v", a, b)
 	// since we are not explicitly returning anything
 	// the naked return will return
 	// default value of the named parameter (x,y)

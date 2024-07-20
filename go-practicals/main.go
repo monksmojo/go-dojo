@@ -10,6 +10,10 @@ import (
 	"github.com/monksmojo/go-dojo/go-practicals/pn13"
 	"github.com/monksmojo/go-dojo/go-practicals/pn14"
 	"github.com/monksmojo/go-dojo/go-practicals/pn15"
+	"github.com/monksmojo/go-dojo/go-practicals/pn16"
+	"github.com/monksmojo/go-dojo/go-practicals/pn17"
+	"github.com/monksmojo/go-dojo/go-practicals/pn18"
+	"github.com/monksmojo/go-dojo/go-practicals/pn19"
 	"github.com/monksmojo/go-dojo/go-practicals/pn2"
 	"github.com/monksmojo/go-dojo/go-practicals/pn3"
 	"github.com/monksmojo/go-dojo/go-practicals/pn4"
@@ -34,7 +38,7 @@ func main() {
 		fmt.Println("PN:5 Creating a name dictionary which holds names with its frequency Go Programming : Golang Course with Bonus Projects 4:05:22")
 		fmt.Println("PN:6 Take a slice and filter all the multiples of 3 and 5 from the slice")
 		fmt.Println("PN:7 Write a Go function to swap the consecutive characters in a string input by the user.")
-		fmt.Println("PN:8 Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2.")
+		fmt.Println("PN:8 Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2. and encode it")
 		fmt.Println("PN9: Write a Go function to remove the characters which have odd index values in a given string.")
 		fmt.Println("PN10: Write a Go function to find frequency of each character 	of the string.")
 		fmt.Println("PN11: Write a Go function to find the second largest element in the slice")
@@ -43,6 +47,14 @@ func main() {
 		fmt.Println("PN:14 Write a Go function to print the reverse of the string and check for palindrome")
 		fmt.Println("PN:15 Write a Go function to get a single string from two given strings, separated by a space and swap the first two characters of each string. Eg input: 'abc', 'xyz' output: 'xyc abz'")
 		fmt.Println("PN:16 LeetCode 744. Find Smallest Letter Greater Than Target")
+		fmt.Println("PN:17 GeekForGeek: Find uncommon characters of the two strings")
+		fmt.Println("PN:18 LinearSearch: search an int in slice of int")
+		fmt.Println("PN:19 LinearSearch: search a character in slice of characters")
+		fmt.Println("PN:20 LinearSearch: search a word in a string")
+		fmt.Println("PN:21 LinearSearch: search for second smallest int in int slice")
+		fmt.Println("PN:22 LinearSearch: search for  int in 2D matrix")
+		fmt.Println("PN:23 LinearSearch: search for second largest element in 2D matrix")
+		fmt.Println("PN:24 LinearSearch: extract numbers with even digits from a slice of int ")
 		fmt.Println("Select the practical you want to execute")
 		var pn int
 		fmt.Scanln(&pn)
@@ -69,7 +81,7 @@ func main() {
 			fmt.Println("PN:7 Write a Go function to swap the consecutive characters in a string input by the user.")
 			pn7.SwapCharactersOfString()
 		case 8:
-			fmt.Println("PN:8 Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2.")
+			fmt.Println("PN:8 Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2 and encode it.")
 			pn8.EncodeTheString()
 		case 9:
 			fmt.Println("PN:9 Write a Go function to remove the characters which have odd index values in a given string.")
@@ -94,6 +106,27 @@ func main() {
 			pn15.CreateString()
 		case 16:
 			fmt.Println("PN:16 LeetCode 744. Find Smallest Letter Greater Than Target")
+			pn16.GetNextGreatestLetter()
+		case 17:
+			fmt.Println("PN:17 GeekForGeek: Find uncommon characters of the two strings")
+			pn17.FindUncommonCharacter()
+		case 18:
+			fmt.Println("PN:18 LinearSearch: search an int in slice of int")
+			pn18.SearchInIntSlice()
+		case 19:
+			fmt.Println("PN:19 LinearSearch: search a character in slice of characters")
+			pn19.SearchCharacterSlice()
+		case 20:
+			fmt.Println("PN:20 LinearSearch: search a word in a string")cd ..
+			
+		case 21:
+			fmt.Println("PN:21 LinearSearch: search for second smallest int in int slice")
+		case 22:
+			fmt.Println("PN:22 LinearSearch: search for  int in 2D matrix")
+		case 23:
+			fmt.Println("PN:23 LinearSearch: search for second largest element in 2D matrix")
+		case 24:
+			fmt.Println("PN:24 LinearSearch: extract numbers with even digits from a slice of int ")
 		default:
 			fmt.Println("you entered the wrong choice dummy !")
 		}

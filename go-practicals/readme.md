@@ -23,13 +23,15 @@
 5. PN :5 Creating a name dictionary which holds names with its frequency Go Programming : Golang Course with Bonus Projects 4:05:22
 6. PN :6 Take a slice and filter all the multiples of 3 and 5 from the slice
 7. PN :7 Write a Go function to swap the consecutive characters in a string input by the user. For example input: “jackiechan”, output: “ajkceihcna”
-8. Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2.")
-9. Write a Go function to remove the characters which have odd index values in a given string.")
-10. Write a Go function to find frequency of each character of the string.")
-11. Write a Go function to find the second largest element in the slice")
-12. Write a Go function to convert a given string to all uppercase if it contains at least uppercase characters in the first 4 characters.")
-13. Write a Go function to remove duplicate characters of a given string.")
-14. Write a Go function to print the reverse of the string and check for palindrome")
+8. Write a Go function to input 2 strings i.e. s1 and s2 and find the presence of s1 in s2.
+9. Write a Go function to remove the characters which have odd index values in a given string.
+10. Write a Go function to find frequency of each character of the string.
+11. Write a Go function to find the second largest element in the slice
+12. Write a Go function to convert a given string to all uppercase if it contains at least uppercase characters in the first 4 characters.
+13. Write a Go function to remove duplicate characters of a given string.
+14. Write a Go function to print the reverse of the string and check for palindrome.
 15. Write a Go function to get a single string from two given strings, separated by a space and swap the first two characters of each string. Eg input: 'abc', 'xyz' output: 'xyc abz'")
-
+16. Binary Search: [LeetCode 744. Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
+17. GeekForGeek: Find uncommon characters of the two strings
+18. 
 > PS: it is just my solution to the problem it may not be optimized or perfect solution to the problem. Suggestions are welcome.

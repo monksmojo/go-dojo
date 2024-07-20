@@ -17,8 +17,9 @@ func main() {
 	// the exception is return by the function  in the form of variable
 	// the exception in golang is received like an variable
 	userRating, _ := reader.ReadString('\n')
+	userRating = userRating[:len(userRating)-1] //removing '\n'
 	fmt.Println("thanks for the rating", userRating)
-	fmt.Printf("type of the rating is %T", userRating)
+	fmt.Printf("type of the rating is %T \n", userRating)
 	// the _ in the line 19 can be replaced by the variable name
 	// if we want to handle the error
 	// but if we don't want to handle the error we can ignore the error by _
@@ -31,7 +32,8 @@ func main() {
 	fmt.Println("please rate our pizza from 1 to 5")
 	ratingReader := bufio.NewReader(os.Stdin)
 	userInput, _ := ratingReader.ReadString('\n')
-	fmt.Println("Thanks for the rating: ", userInput)
+	userInput = userInput[:len(userInput)-1]
+	fmt.Printf("Thanks for the rating: %v \n", userInput)
 	fmt.Printf("rating : is of Type %T \n", userInput)
 
 	// 2.bufio.NewScanner(os.Stdin)
@@ -58,7 +60,7 @@ func main() {
 	// taking multiple input using fmt.Scan()
 	var name string
 	var age int
-	fmt.Println("please enter you name and ag>e")
+	fmt.Println("please enter you name and age")
 	_, error := fmt.Scan(&name, &age)
 	if error != nil {
 		fmt.Println("an error occurred while taking your name and age")

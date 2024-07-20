@@ -116,7 +116,7 @@ $ tree /03package
 │   |-- customMath.go // is declared in package customPackage
 │   |-- customString.go // is declared in package customPackage
 |
-|--go.mod // which is the module file of /03package(also the module name) directory
+|--go.mod // which is the module file of /03package(also the package name) directory
 |--main.go // which comes under package main
 |
 ```

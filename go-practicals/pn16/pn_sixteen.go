@@ -1,5 +1,8 @@
 package pn16
 
+import "fmt"
+
+// 744. Find Smallest Letter Greater Than Target
 /*
 You are given an array of characters letters that is sorted in non-decreasing order, and a character target. There are at least two different characters in letters.
 
@@ -25,24 +28,27 @@ Explanation: There are no characters in letters that is lexicographically greate
 */
 
 func GetNextGreatestLetter() {
-
+	letter := []byte{'c', 'f', 'j'}
+	target := "a"
+	x := nextGreatestLetter(letter, target[0])
+	fmt.Printf("the next greatest is %c \n", x)
 }
 
 func nextGreatestLetter(letters []byte, target byte) byte {
- 	start := 0
+	start := 0
 	end := len(letters) - 1
 	if target >= letters[end] {
 		return letters[0]
 	}
 	var nextGreatest byte
 	for start <= end {
-		mid := (start + end) /2
+		mid := (start + end) / 2
 		if letters[mid] > target {
 			nextGreatest = letters[mid]
-			end = mid-1
+			end = mid - 1
 		} else {
-			start = mid+1
+			start = mid + 1
 		}
 	}
-	return nextGreatest   
+	return nextGreatest
 }

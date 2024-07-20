@@ -88,7 +88,7 @@ func main() {
 	// the number of elements overlaps depends upon the size of the destination
 	var naturalNumbers = []int{9, 10}
 	fmt.Printf("overlapping natural  numbers %v with even numbers %v to create new natural numbers %v using copy() \n", naturalNumbers, evenNumbers, copy(naturalNumbers, evenNumbers))
-	// copy(naturalNumbers, evenNumbers
+	// copy(naturalNumbers, evenNumbers)
 	// reflect.DeepEqual()
 	// comparing of two slice
 	// reflect.DeepEqual() function to compare these slice. The function returns true if both the slice have the same length and same elements in the same order, otherwise it returns false.
