@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/monksmojo/go-dojo/go-projects/tutorialEdge-serveMux-http-request-in-go/handler"
+	"github.com/monksmojo/go-dojo/go-projects/go-new-serveMux-http-request-in-go/handler"
 )
 
 func RequestLoggerMiddleWare(next http.Handler) http.HandlerFunc {

@@ -1,0 +1,169 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: Performing Operations on Matrix
+  title: LEAGUE_MATRIX
+  version: "1.0"
+paths:
+  /Sum:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Receives a CSV file and sum its contents in formatted form
+      parameters:
+      - description: CSV file to sum
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Sum the contents of a CSV file
+      tags:
+      - sum
+  /echo:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Receives a CSV file and echoes its contents in formatted form
+      parameters:
+      - description: CSV file to echo
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Echo the contents of a CSV file
+      tags:
+      - echo
+  /flatten:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Receives a CSV file and flatten its contents in formatted form
+      parameters:
+      - description: CSV file to flatten
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Flatten the contents of a CSV file
+      tags:
+      - flatten
+  /invert:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Receives a CSV file and inverts its contents in formatted form
+      parameters:
+      - description: CSV file to invert
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Invert the contents of a CSV file
+      tags:
+      - invert
+  /multiply:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Receives a CSV file and multiply its contents in formatted form
+      parameters:
+      - description: CSV file to multiply
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: multiply the contents of a CSV file
+      tags:
+      - multiply
+swagger: "2.0"
