@@ -25,5 +25,4 @@ use (
     ./22errors
     ./23advancefunctions
     ./24concurrency
-    ./25time
 )

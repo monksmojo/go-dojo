@@ -117,8 +117,7 @@ func main() {
 			fmt.Println("PN:19 LinearSearch: search a character in slice of characters")
 			pn19.SearchCharacterSlice()
 		case 20:
-			fmt.Println("PN:20 LinearSearch: search a word in a string")cd ..
-			
+			fmt.Println("PN:20 LinearSearch: search a word in a string")
 		case 21:
 			fmt.Println("PN:21 LinearSearch: search for second smallest int in int slice")
 		case 22:
@@ -127,6 +126,8 @@ func main() {
 			fmt.Println("PN:23 LinearSearch: search for second largest element in 2D matrix")
 		case 24:
 			fmt.Println("PN:24 LinearSearch: extract numbers with even digits from a slice of int ")
+		case 25:
+			fmt.Println("PN:25 DeepEdge AI:  a loyal customer")
 		default:
 			fmt.Println("you entered the wrong choice dummy !")
 		}
