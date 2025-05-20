@@ -1,0 +1,4 @@
+- we have used go get -u to fetch the dependencies of the module to the latest patch release withing in the same major version 
+- since we are connecting with the mysql database 
+- go get -u gorm.io/driver/mysql
+- servmux

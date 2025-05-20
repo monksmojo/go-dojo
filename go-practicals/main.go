@@ -15,6 +15,9 @@ import (
 	"github.com/monksmojo/go-dojo/go-practicals/pn18"
 	"github.com/monksmojo/go-dojo/go-practicals/pn19"
 	"github.com/monksmojo/go-dojo/go-practicals/pn2"
+	"github.com/monksmojo/go-dojo/go-practicals/pn20"
+	"github.com/monksmojo/go-dojo/go-practicals/pn21"
+	"github.com/monksmojo/go-dojo/go-practicals/pn22"
 	"github.com/monksmojo/go-dojo/go-practicals/pn3"
 	"github.com/monksmojo/go-dojo/go-practicals/pn4"
 	"github.com/monksmojo/go-dojo/go-practicals/pn5"
@@ -118,10 +121,13 @@ func main() {
 			pn19.SearchCharacterSlice()
 		case 20:
 			fmt.Println("PN:20 LinearSearch: search a word in a string")
+			pn20.SearchWordInString()
 		case 21:
 			fmt.Println("PN:21 LinearSearch: search for second smallest int in int slice")
+			pn21.SecondSmallestInt()
 		case 22:
 			fmt.Println("PN:22 LinearSearch: search for  int in 2D matrix")
+			pn22.SearchIn2DMatrix()
 		case 23:
 			fmt.Println("PN:23 LinearSearch: search for second largest element in 2D matrix")
 		case 24:

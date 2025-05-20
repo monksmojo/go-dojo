@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func searchWordInSentence() {
+func SearchWordInString() {
 	sentence := "what you know about rolling down in the deep"
 	word := "YOU"
 	index := searchWord(getSliceOfWords, sentence, word)

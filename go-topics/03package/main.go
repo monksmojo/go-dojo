@@ -6,6 +6,21 @@ import (
 	"strings"
 )
 
+// the go language is a modular language where the code can be distributed  into different packager and can be compiled together into single binary
+// one package can be imported into another using `import`` keyword
+
+// importing single package
+// import "fmt"
+
+// importing multiple packages
+/*
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+*/
+
 func main() {
 	fmt.Println("welcome to main driver class")
 	fmt.Println("calling customMath.go function", customPackage.MathPackageName)

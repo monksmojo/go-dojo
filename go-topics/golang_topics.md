@@ -10,15 +10,22 @@
 
 - [learn-golang by boot.dev](https://www.boot.dev/learn/learn-golang "learn-golang by boot.dev")
 
-- [Concurrency in Go by Jake Wright "youtube video tutorial"](https://youtu.be/LvgVSSpwND8?list=PL9KOhO7TtG6YazaOAKlU_elPlRDQ2ht3n)
+- [Concurrency in Go by Jake Wright](https://youtu.be/LvgVSSpwND8?list=PL9KOhO7TtG6YazaOAKlU_elPlRDQ2ht3n "Concurrency in Go by Jake Wright youtube video tutorial")
 
+- [Go programming language (Go Class) by Matt KØDVB](https://youtu.be/iDQAZEJK8lI?list=PLoILbKo9rG3skRCj37Kn5Zj803hhiuRK6 "Go programming language (Go Class) by Matt KØDVB youtube video tutorial")
 
+#### Quotes from the Creators and Developers
+
+> if our basic tools and language in which we design and code our program is also complicated, the language itself becomes the part of the problem rather than the part of the solution ~ Tony Hoare
+
+> It's programming if "clever" is a compliment but it's software engineering if "clever" is an accusation. ~ A Software Developer
 
 #### THE NEXT GEN LANGUAGE
 
 - **The GO PROGRAMMING LANGUAGE**
 - **(GOLANG)**
 - It originated at Google by ken Ken Thompson, Rob Pike, and others
+- Go is about language designed in the service of software engineering
 
 #### Features Of Go Language
 
@@ -48,9 +55,70 @@
 - GoLang is Complied
 - Java on the other hand is somewhere in between compiled and interpreted as it creates binary which is executed by jvm (java virtual machine)
 
+#### go toolchain
+
+- go toolchain is the set of tools provided by go programming language
+- they are bundled with the go distribution
+- the go toolchain has the following commands
+  - `go build` compiles the packages and dependencies, creates a executable binary and stores
+  - `go run` compiles the packages and dependencies and executes the executable while saving it at a temporary place. it deletes the executable after executing it
+  - `go install` Compiles and installs the packages, placing the binaries in $GOPATH/bin or $GOBIN.
+  - `go get` Downloads and installs packages and dependencies from remote repositories.
+  - `go mod` Manages modules and dependencies. It includes various subcommands like init, tidy, and download.
+    - Example: `go mod init` creates a `go.mod` file to manage the dependencies.
+    - Example: `go mod tidy` cleans up unused dependencies in the `go.mod` file.
+  - `go clean` Removes object files and cached files created during the build process.
+  - `go env` Displays or sets environment variables used by the Go toolchain.
+  - `go list` Lists the packages, modules, or other information about the project.
+
+#### Difference between `go install` vs `go get`
+
+- `go install`: 
+  - Use `go install` with a specific version to install executables under $GOPATH/bin or $GOBIN without affecting your project's dependencies in `go.mod` file.
+  - compiles, install binaries and install packages from the packages
+  - does not modify `go.mod` or `go.sum`
+- `go get`: 
+  - Use `go get` to add or update dependencies within your Go modules.
+  - add or update your dependencies in go.mod file 
+  - it affects your `go.mod` file.
+  
+
+
+
 #### To Run Go File We write
 
 - go run <file_name>.go
+
+#### Explaining the command go run main.go
+
+- go run first compiles the Go source file(s) into machine code.
+- It uses the Go compiler (gccgo) to perform this compilation.
+- After compiling, it immediately executes the resulting binary.
+- This execution happens in memory, not as a separate step after compilation.
+- When the program finishes running, the compiled binary is automatically deleted.
+
+#### Explaining the command go build -0 myApp main.go
+
+- go build parses and compiles the source code into intermediate object files.
+- the object files are linked to produce an executable binary.
+- go build saves the resulting executable in the current directory (default) or a specified output path.
+
+
+#### difference in go build and go run
+- Aspect:	`go run`
+- Primary: Purpose	Compile and execute immediately	
+- Output:	Temporary executable (deleted after run)	
+- Use Case:	Quick testing, running scripts	
+- Performance:	Slightly slower due to cleanup steps	
+- Flags Availability:	Limited flags specific to execution	
+
+- Aspect:	`go build`
+- Primary: Purpose Compile and produce a binary
+- Output: Persistent executable file
+- Use Case: Building applications for deployment
+- Performance: Faster for repeated executions
+- Flags: More extensive flags for building options
+- @set GO_ENABLED=0 GOARCH=amd64 GOOS=linux & go build -o "./$(BUILD_DIR)/$(BINARY_NAME)-linux" "./cmd/app/main.go"
 
 #### Go Has A Built In Documentation
 
@@ -62,7 +130,20 @@
 
 - go env GOPATH
 
-### Introduction to `go.mod` file
+#### what is GOPATH
+
+- `GOPATH` is an environment variable that specifies the root of your workspace. It is where Go looks for your source code, dependencies, and binaries.
+- in linux machines it is mostly : /usr/local/go/bin
+- A typical GOPATH workspace contains three directories:
+  src: For source code.
+  pkg: For compiled packages.
+  bin: For compiled binaries.
+- Before Go modules were introduced, GOPATH was the default way to manage Go projects.
+- All Go code had to reside inside the GOPATH/src directory. Dependencies were manually managed or through tools like dep, and there was no native versioning of dependencies.
+- Projects had to be kept inside the GOPATH workspace, leading to potential conflicts, especially when working on multiple projects with different versions of the same dependency.
+- It didn't support versioned dependencies well, leading to challenges in managing dependencies across projects.
+
+#### Introduction to `go.mod` file
 
 #### Explaining why go module were needed
 
@@ -167,15 +248,16 @@ go work use project-two
 - This will add a go.work file in your parent directory that contains a list of directories you marked for usage:
 
 ### how to write unit test in go (approach-1)
-- It is good to put the code/logic to test in separate functions. 
+
+- It is good to put the code/logic to test in separate functions.
 - I have learned following steps while writing a test in go.
+
   - creating a `name_test.go` file where we write our unit test.
-  - the unit test function start with `TestNameOfFunction(t *testing.T)` taking 
-  `t *testing.T` as the only argument.
-  - we are using `import "testing"` package. 
+  - the unit test function start with `TestNameOfFunction(t *testing.T)` taking
+    `t *testing.T` as the only argument.
+  - we are using `import "testing"` package.
 
 - It may change as we advance
- 
 
 ### what is lexer
 

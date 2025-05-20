@@ -1,4 +1,4 @@
-go 1.22.0
+go 1.23.0
 
 use (
 	./01main
@@ -25,4 +25,6 @@ use (
     ./22errors
     ./23advancefunctions
     ./24concurrency
+    ./25customtypes
+    ./26envvariables
 )

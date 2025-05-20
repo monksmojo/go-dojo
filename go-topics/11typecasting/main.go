@@ -20,7 +20,7 @@ func main() {
 	fmt.Printf("value %f data type is of type %T \n", intToFloat, intToFloat)
 	// int to string
 	var intToString string = strconv.Itoa(intNumber)
-	fmt.Printf("int value %d to %s value \n", intNumber, intToString)
+	fmt.Printf("int value %d to string %s value \n", intNumber, intToString) // 32 "32"
 	fmt.Printf("value %s data type is of type %T \n", intToString, intToString)
 	// int to bool
 	// there is no direct way to convert int to boolean in go
