@@ -1,0 +1,10 @@
+{{ define "content" }}
+<h1>Available Tickets</h1>
+<ul>
+    {{ range . }}
+        <li>{{ .EventName }} - ${{ .Price }}</li>
+    {{ else }}
+        <li>No tickets available.</li>
+    {{ end }}
+</ul>
+{{ end }}
